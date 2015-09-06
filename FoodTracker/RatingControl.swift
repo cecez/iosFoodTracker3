@@ -11,7 +11,11 @@ import UIKit
 class RatingControl: UIView {
     
     // MARK: Properties
-    var rating = 0
+    var rating = 0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
     var ratingButtons = [UIButton]()
 
     // MARK: Initialization
@@ -27,7 +31,7 @@ class RatingControl: UIView {
             button.setImage(filledStarImage, forState: .Selected)
             button.setImage(filledStarImage, forState: [.Highlighted, .Selected])
             button.adjustsImageWhenHighlighted = false
-            button.addTarget(self, action: "ratingButtonTapped:", forControlEvents: .TouchDown)
+            button.addTarget(self, action: "ratingButtonTapped:", forControlEvents: UIControlEvents.TouchDown)
             ratingButtons += [button]
             addSubview(button)
         }
@@ -45,11 +49,22 @@ class RatingControl: UIView {
             buttonFrame.origin.x = CGFloat(index * (buttonSize + 5))
             button.frame = buttonFrame
         }
+        
+        updateButtonSelectionStates()
     }
     
     // MARK: Button Action
     func ratingButtonTapped(button: UIButton) {
-        print("Button pressed")
+        rating = ratingButtons.indexOf(button)! + 1
+        
+        updateButtonSelectionStates()
+    }
+    
+    func updateButtonSelectionStates() {
+        for (index, button) in ratingButtons.enumerate() {
+            // se o índice do botão é menor do que a avaliação, o botão deve ficar selecionado
+            button.selected = index < rating
+        }
     }
 
 }
