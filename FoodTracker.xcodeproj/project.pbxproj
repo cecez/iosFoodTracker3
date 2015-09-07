@@ -13,7 +13,7 @@
 		264BE2351B9149470098277B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264BE2341B9149470098277B /* Images.xcassets */; };
 		264BE2381B9149470098277B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264BE2361B9149470098277B /* LaunchScreen.xib */; };
 		264BE2441B9149470098277B /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BE2431B9149470098277B /* FoodTrackerTests.swift */; };
-		26DA6ED01B9A65C400974FCB /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA6ECF1B9A65C400974FCB /* RatingControl.swift */; settings = {ASSET_TAGS = (); }; };
+		26DA6ED01B9A65C400974FCB /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA6ECF1B9A65C400974FCB /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -297,7 +297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -336,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

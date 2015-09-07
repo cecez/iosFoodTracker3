@@ -17,6 +17,8 @@ class RatingControl: UIView {
         }
     }
     var ratingButtons = [UIButton]()
+    var spacing = 5
+    var stars = 5
 
     // MARK: Initialization
     required init?(coder aDecoder: NSCoder) {
@@ -25,13 +27,13 @@ class RatingControl: UIView {
         let filledStarImage = UIImage(named: "filledStar")
         let emptyStarImage = UIImage(named: "emptyStar")
         
-        for _ in 0..<5 {
+        for _ in 0..<stars {
             let button = UIButton()
             button.setImage(emptyStarImage, forState: .Normal)
             button.setImage(filledStarImage, forState: .Selected)
             button.setImage(filledStarImage, forState: [.Highlighted, .Selected])
             button.adjustsImageWhenHighlighted = false
-            button.addTarget(self, action: "ratingButtonTapped:", forControlEvents: UIControlEvents.TouchDown)
+            button.addTarget(self, action: Selector("ratingButtonTapped:"), forControlEvents: UIControlEvents.TouchUpInside)
             ratingButtons += [button]
             addSubview(button)
         }
@@ -46,7 +48,7 @@ class RatingControl: UIView {
         var buttonFrame = CGRect(x: 0, y: 0, width: buttonSize, height: buttonSize)
         
         for (index, button) in ratingButtons.enumerate() {
-            buttonFrame.origin.x = CGFloat(index * (buttonSize + 5))
+            buttonFrame.origin.x = CGFloat(index * (buttonSize + spacing))
             button.frame = buttonFrame
         }
         
