@@ -18,29 +18,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Refeição" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fP-0H-yrE">
-                                <rect key="frame" x="20" y="73" width="67" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome da refeição" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFj-Rz-JfI">
-                                <rect key="frame" x="20" y="102" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="yJh-ak-OOd">
-                                <rect key="frame" x="20" y="178" width="320" height="320"/>
-                                <gestureRecognizers/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="8Wk-ey-X4I">
+                                <rect key="frame" x="20" y="80" width="560" height="395"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refeição" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fP-0H-yrE">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome da refeição" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFj-Rz-JfI">
+                                        <rect key="frame" x="0.0" y="33" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="yJh-ak-OOd">
+                                        <rect key="frame" x="0.0" y="75" width="320" height="320"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="320" id="0K7-3k-gP8"/>
+                                            <constraint firstAttribute="width" constant="320" id="3CJ-dg-0So"/>
+                                            <constraint firstAttribute="width" secondItem="yJh-ak-OOd" secondAttribute="height" multiplier="1:1" id="ANe-ng-ily"/>
+                                            <constraint firstAttribute="width" secondItem="yJh-ak-OOd" secondAttribute="height" multiplier="1:1" id="b62-TN-HlM"/>
+                                            <constraint firstAttribute="height" constant="320" id="c7b-tI-xrq"/>
+                                            <constraint firstAttribute="width" constant="320" id="dV1-Si-avH"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0K7-3k-gP8"/>
+                                                <exclude reference="3CJ-dg-0So"/>
+                                                <exclude reference="b62-TN-HlM"/>
+                                                <exclude reference="c7b-tI-xrq"/>
+                                                <exclude reference="dV1-Si-avH"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Axk-hk-Pu0" appends="YES" id="ZaZ-Od-fqQ"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="0K7-3k-gP8"/>
-                                    <constraint firstAttribute="width" secondItem="yJh-ak-OOd" secondAttribute="height" multiplier="1:1" id="b62-TN-HlM"/>
-                                    <constraint firstAttribute="width" constant="320" id="dV1-Si-avH"/>
+                                    <constraint firstAttribute="trailing" secondItem="CFj-Rz-JfI" secondAttribute="trailing" id="YR4-la-SDp"/>
+                                    <constraint firstItem="CFj-Rz-JfI" firstAttribute="leading" secondItem="8Wk-ey-X4I" secondAttribute="leading" id="aSk-6P-Kuu"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Axk-hk-Pu0" appends="YES" id="ZaZ-Od-fqQ"/>
-                                </connections>
-                            </imageView>
+                            </stackView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="Tlg-oV-aWg" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
                                 <rect key="frame" x="20" y="516" width="240" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,12 +69,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3fP-0H-yrE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="Klb-ga-21J"/>
+                            <constraint firstItem="8Wk-ey-X4I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Pq-om-Rx6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Wk-ey-X4I" secondAttribute="trailing" id="MfW-wI-rxj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Tlg-oV-aWg" secondAttribute="bottom" constant="5" id="YQ8-4l-hZm"/>
-                            <constraint firstItem="CFj-Rz-JfI" firstAttribute="top" secondItem="3fP-0H-yrE" secondAttribute="bottom" constant="5" id="Zaj-cd-ZfM"/>
-                            <constraint firstItem="Tlg-oV-aWg" firstAttribute="top" secondItem="yJh-ak-OOd" secondAttribute="bottom" constant="5" id="c2R-wk-pwg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yJh-ak-OOd" secondAttribute="trailing" constant="240" id="fxC-RH-rl5"/>
+                            <constraint firstItem="8Wk-ey-X4I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="qmB-Af-rCY"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YQ8-4l-hZm"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="3fP-0H-yrE" id="oCX-2s-cfw"/>
